@@ -8,8 +8,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    public float speed;
+    public float speed, jumpForce;
     public float groundDist;
+
+    private Vector2 moveInput;
 
     public LayerMask terrainLayer;
     public Rigidbody rb;
@@ -19,13 +21,13 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        //terrain stuff
+        
         RaycastHit hit;
         Vector3 castPos = transform.position;
         castPos.y += 1;
@@ -38,19 +40,23 @@ public class PlayerController : MonoBehaviour
                 transform.position = movePos;
             }
         }
+        
 
-        float x = Input.GetAxis("Horizontal");
-        float y = Input.GetAxis("Vertical");
-        Vector3 moveDir = new Vector3(x, 0, y);
-        rb.velocity = moveDir * speed;
+        moveInput.x = Input.GetAxis("Horizontal");
+        moveInput.y = Input.GetAxis("Vertical");
+        moveInput.Normalize();
 
-        if (x != 0 && x < 0)
-        {
-            sr.flipX = true;
-        }
-        else if (x != 0 && x > 0)
+        rb.velocity = new Vector3(moveInput.x * speed, rb.velocity.y , moveInput.y * speed);
+
+        
+        if (moveInput.x != 0 && moveInput.x < 0)
         {
             sr.flipX = false;
         }
+        else if (moveInput.x != 0 && moveInput.x > 0)
+        {
+            sr.flipX = true;
+        }
+        
     }
 }
