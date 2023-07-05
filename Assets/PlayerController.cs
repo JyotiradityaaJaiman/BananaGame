@@ -8,26 +8,37 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
+    // movement values
     public float speed, jumpForce;
     public float groundDist;
-
     private Vector2 moveInput;
-
     public LayerMask terrainLayer;
     public Rigidbody rb;
     public SpriteRenderer sr;
+
+    // health & magic values
+    public int maxHealth = 100;
+    public int currentHealth;
+    public int maxMagic = 20;
+    public int currentMagic;
+    public HealthBar healthBar;
+    public MagicBar magicBar;
+
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(currentHealth);
+        currentMagic = maxMagic; 
+        magicBar.SetMaxMagic(currentMagic);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //terrain stuff
-        
+        // ensures that character stays above ground
         RaycastHit hit;
         Vector3 castPos = transform.position;
         castPos.y += 1;
@@ -40,15 +51,12 @@ public class PlayerController : MonoBehaviour
                 transform.position = movePos;
             }
         }
-        
-
+        // movement
         moveInput.x = Input.GetAxis("Horizontal");
         moveInput.y = Input.GetAxis("Vertical");
         moveInput.Normalize();
-
         rb.velocity = new Vector3(moveInput.x * speed, rb.velocity.y , moveInput.y * speed);
-
-        
+        // flips the character
         if (moveInput.x != 0 && moveInput.x < 0)
         {
             sr.flipX = false;
@@ -57,6 +65,23 @@ public class PlayerController : MonoBehaviour
         {
             sr.flipX = true;
         }
-        
+
+        // health and magic bars
+        if (Input.GetKeyDown(KeyCode.Space)){HealthGone(20);}
+        if (Input.GetKeyDown(KeyCode.Space)){MagicGone(3);}
+
+    }
+
+
+    // helps with reducing health
+    void HealthGone(int health){
+        currentHealth-=health;
+        healthBar.SetHealth(currentHealth);
+    }
+
+    // helps with reducing magic
+    void MagicGone(int magic){
+        currentMagic-=magic;
+        magicBar.SetMagic(currentMagic);
     }
 }
