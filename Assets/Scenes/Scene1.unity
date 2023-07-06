@@ -6335,6 +6335,7 @@ GameObject:
   - component: {fileID: 505758175}
   - component: {fileID: 505758174}
   - component: {fileID: 505758173}
+  - component: {fileID: 505758177}
   m_Layer: 0
   m_Name: Tree1 (7)
   m_TagString: Untagged
@@ -6459,6 +6460,21 @@ Transform:
   m_Father: {fileID: 1355915729}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &505758177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505758172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f2b6d5087927a14997177a856708943, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeSpeed: 10
+  fadeAmount: 0.4
+  doFade: 0
 --- !u!1 &519375377
 GameObject:
   m_ObjectHideFlags: 0
@@ -16441,6 +16457,7 @@ GameObject:
   - component: {fileID: 1614516490}
   - component: {fileID: 1614516489}
   - component: {fileID: 1614516488}
+  - component: {fileID: 1614516492}
   m_Layer: 0
   m_Name: Tree1 (6)
   m_TagString: Untagged
@@ -16565,6 +16582,21 @@ Transform:
   m_Father: {fileID: 1355915729}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1614516492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1614516487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f2b6d5087927a14997177a856708943, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeSpeed: 10
+  fadeAmount: 0.4
+  doFade: 0
 --- !u!1 &1619629122
 GameObject:
   m_ObjectHideFlags: 0
@@ -18283,6 +18315,7 @@ GameObject:
   - component: {fileID: 1776861264}
   - component: {fileID: 1776861263}
   - component: {fileID: 1776861262}
+  - component: {fileID: 1776861266}
   m_Layer: 0
   m_Name: Tree1 (4)
   m_TagString: Untagged
@@ -18407,6 +18440,21 @@ Transform:
   m_Father: {fileID: 1355915729}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1776861266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776861261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f2b6d5087927a14997177a856708943, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeSpeed: 10
+  fadeAmount: 0.4
+  doFade: 0
 --- !u!1 &1789790583
 GameObject:
   m_ObjectHideFlags: 0
