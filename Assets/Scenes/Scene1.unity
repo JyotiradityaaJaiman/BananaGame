@@ -435,6 +435,7 @@ GameObject:
   m_Component:
   - component: {fileID: 55312750}
   - component: {fileID: 55312749}
+  - component: {fileID: 55312751}
   m_Layer: 0
   m_Name: Virtual Camera
   m_TagString: Untagged
@@ -497,6 +498,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 11.57, y: -0.82, z: 0}
+--- !u!114 &55312751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 55312748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab034f024ec40a34589ccfff22d9ab38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &70766361
 GameObject:
   m_ObjectHideFlags: 0
@@ -8407,6 +8420,7 @@ GameObject:
   - component: {fileID: 766360545}
   - component: {fileID: 766360547}
   - component: {fileID: 766360548}
+  - component: {fileID: 766360549}
   m_Layer: 0
   m_Name: Tree1
   m_TagString: Untagged
@@ -8531,6 +8545,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.5755233, y: 3.71, z: 0.17860031}
   m_Center: {x: -0.13627487, y: 0, z: 0.010699898}
+--- !u!114 &766360549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766360543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f2b6d5087927a14997177a856708943, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeSpeed: 10
+  fadeAmount: 0.4
+  doFade: 0
 --- !u!1 &771983294
 GameObject:
   m_ObjectHideFlags: 0
@@ -13359,9 +13388,9 @@ GameObject:
   - component: {fileID: 1364890580}
   - component: {fileID: 1364890579}
   - component: {fileID: 1364890582}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Banana
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13641,7 +13670,7 @@ GameObject:
   - component: {fileID: 1399638744}
   - component: {fileID: 1399638747}
   - component: {fileID: 1399638746}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17732,7 +17761,7 @@ GameObject:
   - component: {fileID: 1716671014}
   - component: {fileID: 1716671016}
   - component: {fileID: 1716671015}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
