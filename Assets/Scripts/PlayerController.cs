@@ -28,7 +28,9 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // for movement
         rb = GetComponent<Rigidbody>();
+        // for UI
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(currentHealth);
         currentMagic = maxMagic; 
