@@ -28,6 +28,8 @@ public class ObjectFader : MonoBehaviour
         }
     }
 
+    // Object Fader works better when there is 1 large object the player is behind, as opposed to multiple objects.
+    // Such as 1 tree as opposed to a forrest
     void FadeNow()
     {
         Color currentColour = sr.color;
