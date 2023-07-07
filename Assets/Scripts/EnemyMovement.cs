@@ -12,7 +12,8 @@ public class EnemyMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-         agent = GetComponent<NavMeshAgent>();
+        //target = PlayerManager.instance.player.transform;
+        agent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
