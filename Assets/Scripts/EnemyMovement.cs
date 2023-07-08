@@ -1,24 +1,48 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
     public float lookRadius = 10;
-    Transform target;
-    NavMeshAgent agent;
+    public float movementSpeed = 5f;
+    public int damageAmount = 10;
 
-    // Start is called before the first frame update
-    void Start()
+    private Transform player;
+    private SpriteRenderer sr;
+
+    private void Start()
     {
-         agent = GetComponent<NavMeshAgent>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        sr = GetComponent<SpriteRenderer>();
+        
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (player != null)
+        {
+            
+            float distance = Vector3.Distance(player.position, transform.position);
+            if (distance <= lookRadius)
+            {
+                Vector3 direction = player.position - transform.position;
+            direction.Normalize();
+
+            transform.Translate(direction * movementSpeed * Time.deltaTime);
+
+            // Flip the sprite based on the player's position relative to the enemy
+            if (direction.x < 0)
+            {
+                sr.flipX = true;
+            }
+            else if (direction.x > 0)
+            {
+                sr.flipX = false;
+            }
+            }
+        }
     }
 
     void OnDrawGizmosSelected ()

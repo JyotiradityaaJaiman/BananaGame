@@ -16,14 +16,8 @@ public class PlayerController : MonoBehaviour
     public Rigidbody rb;
     public SpriteRenderer sr;
 
-    // health & magic values
-    public int maxHealth = 100;
-    public int currentHealth;
-    public int maxMagic = 20;
-    public int currentMagic;
-    public HealthBar healthBar;
-    public MagicBar magicBar;
-
+    // interaction
+     public float interactRadius = 0.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -31,10 +25,6 @@ public class PlayerController : MonoBehaviour
         // for movement
         rb = GetComponent<Rigidbody>();
         // for UI
-        currentHealth = maxHealth;
-        healthBar.SetMaxHealth(currentHealth);
-        currentMagic = maxMagic; 
-        magicBar.SetMaxMagic(currentMagic);
     }
 
     // Update is called once per frame
@@ -68,22 +58,11 @@ public class PlayerController : MonoBehaviour
             sr.flipX = true;
         }
 
-        // health and magic bars
-        if (Input.GetKeyDown(KeyCode.Space)){HealthGone(20);}
-        if (Input.GetKeyDown(KeyCode.Space)){MagicGone(3);}
+        // for right shift to interact
+        if (Input.GetKeyDown(KeyCode.RightShift))
+        {
+            
+        }
 
-    }
-
-
-    // helps with reducing health
-    void HealthGone(int health){
-        currentHealth-=health;
-        healthBar.SetHealth(currentHealth);
-    }
-
-    // helps with reducing magic
-    void MagicGone(int magic){
-        currentMagic-=magic;
-        magicBar.SetMagic(currentMagic);
     }
 }
