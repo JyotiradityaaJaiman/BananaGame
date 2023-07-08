@@ -16,9 +16,15 @@ public class CharacterStats : MonoBehaviour
     void Awake ()
     {
         currentHealth = maxHealth;
-        healthBar.SetMaxHealth(currentHealth);
+        if (healthBar != null)
+        {
+            healthBar.SetMaxHealth(currentHealth);
+        }
         currentMagic = maxMagic;
-        magicBar.SetMaxMagic(currentMagic);
+        if (magicBar != null)
+        {
+            magicBar.SetMaxMagic(currentMagic);
+        }
     }
 
     void Update()
@@ -41,7 +47,10 @@ public class CharacterStats : MonoBehaviour
 
         // damage removed from health
         currentHealth -= damage;
-        healthBar.SetHealth(currentHealth);
+        if (healthBar != null)
+        {
+            healthBar.SetHealth(currentHealth);
+        }
         if (currentHealth <= 0)
         {
             Debug.Log("<color=red>" + transform.name + " takes " + damage + " damage</color>");
@@ -59,7 +68,10 @@ public class CharacterStats : MonoBehaviour
             return;
         }
         currentMagic -= magic;
-        magicBar.SetMagic(currentMagic);
+        if (magicBar != null)
+        {
+            magicBar.SetMagic(currentMagic);
+        }
         Debug.Log("<color=cyan>" + transform.name + " uses spell, consuming " + magic + " magic</color>");
 
     }
