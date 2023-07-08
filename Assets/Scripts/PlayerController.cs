@@ -16,6 +16,12 @@ public class PlayerController : MonoBehaviour
     public Rigidbody rb;
     public SpriteRenderer sr;
 
+    // UI elements
+    public int maxHealth = 100;
+    public HealthBar healthBar;
+    public int maxMagic = 20;
+    public MagicBar magicBar;
+
     // interaction
      public float interactRadius = 0.5f;
 
