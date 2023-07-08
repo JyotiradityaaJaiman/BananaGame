@@ -2639,7 +2639,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 947210288}
   m_LocalRotation: {x: -0.002830102, y: 0.0001775625, z: 0.0007296138, w: -0.9999957}
-  m_LocalPosition: {x: 4.25, y: -1.03, z: -4.64}
+  m_LocalPosition: {x: 9.54, y: -1.04, z: -4.64}
   m_LocalScale: {x: 0.9087, y: 0.92700005, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3705,11 +3705,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1364890576}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 641a88bf0abf8a640b2209196e9ed80b, type: 3}
+  m_Script: {fileID: 11500000, guid: b44c8fe10e3ffe24c9fff459b5c3b216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
   healthBar: {fileID: 759140416}
+  damage:
+    baseValue: 0
+  armour:
+    baseValue: 0
   maxMagic: 20
   magicBar: {fileID: 1989405827}
 --- !u!1 &1399638743
