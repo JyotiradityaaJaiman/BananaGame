@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
     public HealthBar healthBar;
     public MagicBar magicBar;
 
+    // interaction
+     public float interactRadius = 0.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -71,6 +73,12 @@ public class PlayerController : MonoBehaviour
         // health and magic bars
         if (Input.GetKeyDown(KeyCode.Space)){HealthGone(20);}
         if (Input.GetKeyDown(KeyCode.Space)){MagicGone(3);}
+
+        // for right click to interact
+        if (Input.GetKeyDown(KeyCode.RightShift))
+        {
+            
+        }
 
     }
 
